@@ -1,0 +1,96 @@
+polySphere -radius 1 -subdivisionsX 20 -subdivisionsY 20 -axis 0 1 0 -createUVs 2 -constructionHistory 1;
+polySphere -radius 1 -subdivisionsX 20 -subdivisionsY 20 -axis 0 1 0 -createUVs 2 -constructionHistory 1;
+move -radius -os -wd 0 0.66217 0;
+scale -radius 0.7 0.7 0.7;
+move -radius -os -wd 0 0.4 0;
+polySphere -radius 0.7 -subdivisionsX 20 -subdivisionsY 20 -axis 0 0.5 0 -createUVs 2 -constructionHistory 1;
+move -r -os -wd 0 0.45 0;
+scale -r 0.6 0.6 0.6;
+polySphere -radius 0.1 -subdivisionsX 5 -subdivisionsY 4 -axis 0 0.5 0 -createUVs 2 -constructionHistory 1;
+move -r -os -wd 2 0 0;
+move -r -os -wd 0 0.4 0; 
+move -r -os -wd -0.4 0 0; 
+move -r -os -wd 0 -0.2 0; 
+duplicate -rr;
+move -relative -objectSpace -worldSpaceDistance 0 -0.4 0;
+move -relative -objectSpace -worldSpaceDistance 0.1 0 0;
+polySphere -radius 0.1 -subdivisionsX 10 -subdivisionsY 10 -axis 0 1 0 -createUVs 2 -constructionHistory 1;
+move -relative -objectSpace -worldSpaceDistance 0 2 0;
+move -relative -objectSpace -worldSpaceDistance 0.4 0 0;
+move -relative -objectSpace -worldSpaceDistance 0 0 -0.2
+scale -relative 0.3 0.3 0.3;
+duplicate -rr;
+move -relative -objectSpace -worldSpaceDistance 0 0 0.3;
+select -r pSphere6;
+move -relative -objectSpace -worldSpaceDistance 0 0 -0.1;
+move -relative -objectSpace -worldSpaceDistance -0.02 0 0;
+polyCone -radius 1 -height 2  -subdivisionsX 20  -subdivisionsY 20 -subdivisionsZ 0  -axis 0 1 0 -roundCap 0 -createUVs 3 -constructionHistory 1;
+rotate -relative -objectSpace -fo 0 0 -90;
+move -relative -objectSpace -worldSpaceDistance -2 0 0;
+scale -relative 0.2 0.2 0.2;
+move -relative -objectSpace -worldSpaceDistance 0 0.5 0;
+move -relative -objectSpace -worldSpaceDistance 0 -0.03 0;
+move -relative -objectSpace -worldSpaceDistance 0 0 -0.03;
+move -relative -objectSpace -worldSpaceDistance 0.03 0 0;
+select -r pCone1;
+select -r pSphere6;
+duplicate -rr;
+move -relative -objectSpace -worldSpaceDistance 0 -0.1 0;
+duplicate -rr;
+move -relative -objectSpace -worldSpaceDistance 0 -0.1 0;
+move -relative -objectSpace -worldSpaceDistance 0 0 0.1;
+duplicate -rr;
+move -relative -objectSpace -worldSpaceDistance 0 0 0.1;
+select pSphere10;
+duplicate -rr;
+move -relative -objectSpace -worldSpaceDistance 0 0 0.3;
+select pSphere10 pSphere11 pSphere12 pSphere13;
+scale -relative 0.6 0.6 0.6;
+select pSphere13;
+move -relative -objectSpace -worldSpaceDistance 0.02 0 0;
+select pSphere12;
+move -relative -objectSpace -worldSpaceDistance 0 0.01 0.01;
+select pSphere11;
+move -relative -objectSpace -worldSpaceDistance 0 0.01 -0.01;
+polyCylinder -radius 1 -height 2 -subdivisionsX 20 -subdivisionsY 1 -subdivisionsZ 1 -axis 0 1 0 -roundCap 0 -createUVs 3 -constructionHistory 1;
+move -relative -objectSpace -worldSpaceDistance 0 0.6 0;
+scale -relative 1 0.3 1;
+scale -relative 0.5 0.5 0.5;
+move -relative -objectSpace -worldSpaceDistance 0 -0.8 0;
+duplicate -rr;
+scale -relative 0.8 0.8 0.8;
+move -relative -objectSpace -worldSpaceDistance 0 0.1 0;
+move -relative -objectSpace -worldSpaceDistance 0 -0.02 0;
+scale -relative 1 5 1;
+move -relative -objectSpace -worldSpaceDistance 0 0.1 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
