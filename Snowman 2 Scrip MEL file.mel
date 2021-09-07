@@ -1,0 +1,39 @@
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+select -r pSphere1;
+duplicate -rr;
+move -r 0 1.3 0;
+scale -relative 0.8 0.8 0.8;
+duplicate -rr;
+move 0 2.4 0;
+scale -relative 0.7 0.7 0.7;
+duplicate -rr;
+move -r 0 0 0.2;
+scale 0.1 0.1 0.1;
+move -r  0 0 0.3
+move -r 0.2 0.2 0;
+move -r 0 -0.1 0; 
+duplicate -rr;
+move -r -0.4 0 0;
+polyCone -r 1 -h 2 -sx 20 -sy 1 -sz 0 -ax 0 1 0 -rcp 0 -cuv 3 -ch 1;
+move 0 2.4 0; 
+rotate -r -os -fo 90 0 0;
+move -r 0 0 1.5;
+scale -relative 0.1 0.1 0.1;
+move -r 0 0 -0.9;
+scale -r 1 1.9 1;
+polyCylinder -r 1 -h 2 -sx 20 -sy 1 -sz 1 -ax 0 1 0 -rcp 0 -cuv 3 -ch 1;
+move -r 0 3.7 0;
+scale -r  0.7 0.7 0.7;
+move -r 0 -0.3 0;
+scale 1 -0.3 1;
+scale -r 0.6 0.6 0.6; 
+move -r 0 -0.5 0;
+select -r pCylinder1.f[20:39];
+select -add pCylinder1.f[60:79];
+scale 0.78 0.78 0.78;
+select -r pCylinder1.f[20:39];
+polyExtrudeFacet -constructionHistory 1 -keepFacesTogether 1 -pvx -3.576278687e-08 -pvy 3.361032634 -pvz -7.152557374e-08 -divisions 1 -twist 0 -taper 1 -off 0 -thickness 0 -smoothingAngle 30 pCylinder1.f[20:39];
+move -r 0 0.2 0;
+scale 1.2 1.2 1.2;
+
+ 
