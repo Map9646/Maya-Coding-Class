@@ -38,7 +38,8 @@ move -r 0 -0.1 0;
 scale -r 1 1 3;
 select -r pSphere1 pSphere2 pSphere3 pSphere4 pSphere5 pSphere6 ;
 doGroup 0 1 1;
-rename  "Objects";  
+rename  "Objects";
+doGroup 0 1 1;  
 select -r group1; 
 rename "Geometry";
 
