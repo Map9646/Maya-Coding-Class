@@ -1,4 +1,4 @@
-//Ask for help on Mean, Median, Mode and Powers, but mostly, Median, Mode and Powers. 
+//Need help on Median and Mode still
 global proc float Add(float $numbers[])
 {
   float $sum = 0; 
@@ -70,21 +70,20 @@ Divide({10,5});
 
 
 
-global proc float Powers(float $numbers[])//Ask for help from classmates. Confused on how to word it in MEL. 
-{
-  float $power = $numbers[0]; 
+global proc float Powers(float $numbers[])//I did it! Ha!
+  float $power = $numbers[1]; 
   
   for($i=1; $i<size($numbers); $i++)
   {
-      $power = `pow $numbers[1]`;
+     $power = `pow $numbers[0] $numbers[1]`;
       
   }
     
-    return $power; 
+    return `pow $numbers[0] $numbers[1]`;
 
 }
 
-Powers({2,3});
+Powers({3,2});
 
 
 global proc float Mean(float $numbers[])
@@ -98,27 +97,36 @@ global proc float Mean(float $numbers[])
   }
     
  
-      $average /= 3;                       
+      $average /= $i;                       
      
  
  return $average;
 }
 
-Mean({10,5,3}); 
+Mean({10,5,3,4}); 
 
 
-global proc float Median(float $numbers[0])//Not sure how to write this one in MEL. Not sure how to go about doing it.  
+global proc float Median(float $numbers[0])//Need help on wording this one in MEL
 {
-    float $middle = $numbers[0]; 
-   
-    sort[$numbers];  
+    float $numbers; 
+    $numbers[] = `sort $numbers[]`; 
 }
 
 
 Median({10,2,5,9,12}); 
 
-global proc float Mode(float $numbers[0])//Ask for help on Mode. I don't know where to start on either of these two functions. 
+global proc float Mode(float $numbers[])//Need help on wording this one as well. 
 {
+    float $mode = $frequency[0];
+    
+    if($numbers[0] = $numbers[1])
+    {
+        $mode = frequency[0];
+         
+    }
+    
+   return $mode;  
+    
     
 }
 
