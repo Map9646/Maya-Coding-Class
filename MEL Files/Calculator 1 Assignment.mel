@@ -106,27 +106,47 @@ global proc float Mean(float $numbers[])
 Mean({10,5,3,4}); 
 
 
-global proc float Median(float $numbers[0])//Need help on wording this one in MEL
+global proc float Median(float $numbers[])//Almost working, but I'm missing something at the end. Must be more Math
 {
-    float $numbers; 
-    $numbers[] = `sort $numbers[]`; 
+    float $sizeofArray = 0; 
+    float $middle = 0; 
+    
+    $numbers = `sort $numbers`;
+    $sizeofArray =  `size($numbers)`;
+    $sizeofArray = $sizeofArray % 2; 
+    
+    if($sizeofArray >= 0)
+    {
+       return 1;  
+    }
+    
+    else
+    {
+     $middle = $numbers[size($sizeofArray) / 2];  
+    }
+    
+    return $middle; 
 }
+
+Median({10,5,2}); 
+   
+    
+
+    
+ 
 
 
 Median({10,2,5,9,12}); 
 
 global proc float Mode(float $numbers[])//Need help on wording this one as well. 
 {
-    float $mode = $frequency[0];
+    float $mode = $numbers[$i];
     
-    if($numbers[0] = $numbers[1])
-    {
-        $mode = frequency[0];
-         
-    }
+    
     
    return $mode;  
     
     
 }
 
+Mode({1,1,2}); 
