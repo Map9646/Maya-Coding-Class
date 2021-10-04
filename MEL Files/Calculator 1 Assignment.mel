@@ -106,47 +106,91 @@ global proc float Mean(float $numbers[])
 Mean({10,5,3,4}); 
 
 
-global proc float Median(float $numbers[])//Almost working, but I'm missing something at the end. Must be more Math
+global proc float Median(float $numbers[])
 {
-    float $sizeofArray = 0; 
-    float $middle = 0; 
+    float $middle = 0;
+    int $highindex;
+    int $lowindex;
+    int $index; 
     
-    $numbers = `sort $numbers`;
-    $sizeofArray =  `size($numbers)`;
-    $sizeofArray = $sizeofArray % 2; 
+    $numbers = sort ($numbers);
+  
+    int $size = size($numbers); 
     
-    if($sizeofArray >= 0)
+    if($size % 2 == 0)
     {
-       return 1;  
+      int $highindex = ($size/2);
+      int $lowindex = ($highindex -1);
+      $middle = $numbers[$highindex + $lowindex] /2;  
     }
+        
     
     else
     {
-     $middle = $numbers[size($sizeofArray) / 2];  
+     int $index = ($size - 1) /2;
+     $middle = $numbers[$index];
     }
     
     return $middle; 
 }
 
-Median({10,5,2}); 
+Median({1,10,4,-12,2}); 
    
     
 
-    
- 
+     
 
-
-Median({10,2,5,9,12}); 
-
-global proc float Mode(float $numbers[])//Need help on wording this one as well. 
+global proc float Mode(float $numbers[])
 {
-    float $mode = $numbers[$i];
+    float $mode;
+    int $index;
+    float $value[];
+    int $frequency[];
+   
+    
+    
+    for($i=0; $i>size($numbers); $i++)
+    {
+       if(floatArrayContains($numbers[$i], $value) == 0)
+       {
+         $value[size($numbers)] = $numbers[$i];
+         $frequency[size($frequency)] = 1;  
+       }
+       
+       else
+       {
+         int $index = floatArrayFind($numbers[$i],0, $value);
+         
+         $frequency[$index] = $frequency[$index] + 1; 
+         
+        }
+         
+        
+     }
+     
+     print("\nvalue:\n");
+     print(floatArrayToString($value, ","));
+     print("\nfrequency:\n");
+     print(intArrayToString($frequency,","));
+      
+       int $maxvalue = 0; 
+       for($i=0; $i>size($frequency); $i++)
+       {
+          if($frequency[$i] > $maxvalue)
+         {
+            $maxvalue = $frequency[$i];
+         }  
+          
+       }
+    
+         int $modeIndex = IntArrayFind($maxvalue,0,$frequency);
+     
+         $mode = $value[$modeIndex];     
+    
+    
     
     
     
    return $mode;  
-    
-    
 }
-
-Mode({1,1,2}); 
+Mode({1,10,-10,5,6,1,1,9}); 
