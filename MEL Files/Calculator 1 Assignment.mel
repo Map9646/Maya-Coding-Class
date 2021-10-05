@@ -71,6 +71,7 @@ Divide({10,5});
 
 
 global proc float Powers(float $numbers[])//I did it! Ha!
+{                                                            //<-- that bracket was missing
   float $power = $numbers[1]; 
   
   for($i=1; $i<size($numbers); $i++)
@@ -149,11 +150,11 @@ global proc float Mode(float $numbers[])
    
     
     
-    for($i=0; $i>size($numbers); $i++)
+    for($i=0; $i<size($numbers); $i++)// I changed the $i<size($numbers) because it had a > instead of the < so the loop wasn't running because $i wouldn't be greater than the size of the array and still have values to check
     {
        if(floatArrayContains($numbers[$i], $value) == 0)
        {
-         $value[size($numbers)] = $numbers[$i];
+         $value[size($value)] = $numbers[$i];// I changed the $value[size($numbers)] to $value[size($value)] because it would be placing the $numbers[$i] at the same index since the size of $numbers would never change
          $frequency[size($frequency)] = 1;  
        }
        
@@ -168,24 +169,28 @@ global proc float Mode(float $numbers[])
         
      }
      
+     print("numbers:\n");// I added these to make sure that $numbers was recieving the input properly
+     print(floatArrayToString($numbers, ", "));
      print("\nvalue:\n");
-     print(floatArrayToString($value, ","));
+     print(floatArrayToString($value, ", "));
      print("\nfrequency:\n");
-     print(intArrayToString($frequency,","));
+     print(intArrayToString($frequency, ", "));
       
-       int $maxvalue = 0; 
-       for($i=0; $i>size($frequency); $i++)
+       int $maxvalue = 0;
+       int $modeIndex; // I also delcared the $modeIndex here because it was having an issue assigning the intArrayFind($maxvalue,0,$frequency) in the same line
+       for($i=0; $i<size($frequency); $i++) // I changed the > to < it was the same thing as the other for loop
        {
           if($frequency[$i] > $maxvalue)
          {
             $maxvalue = $frequency[$i];
          }  
           
+         $modeIndex = intArrayFind($maxvalue,0,$frequency);
+     
+         $mode = $value[$modeIndex]; 
        }
     
-         int $modeIndex = IntArrayFind($maxvalue,0,$frequency);
-     
-         $mode = $value[$modeIndex];     
+             
     
     
     
@@ -193,4 +198,13 @@ global proc float Mode(float $numbers[])
     
    return $mode;  
 }
-Mode({1,10,-10,5,6,1,1,9}); 
+Mode({1,10,10,-10,5,6,1,1,9,9,9,9}); 
+
+/*
+So the file you sent me there was a missing bracket on line 74
+on line 153 I changed the $i<size($numbers) because it had a > instead of the < so the loop wasn't running because $i wouldn't be greater than the size of the array and still have values to check and place in the values and frequency arrays
+on line 157 I changed the $value[size($numbers)] to $value[size($value)] because it would be placing the $numbers[$i] at the same index since the size of $numbers would never change
+on 172 and 173 I added prints to make sure that $numbers was recieving the input properly
+on 180 I delcared the $modeIndex because it was having an issue assigning the intArrayFind($maxvalue,0,$frequency) to it and declaring at the same time on line 188
+on line 181 I changed the > to < it was the same thing as the other for loop
+*/
