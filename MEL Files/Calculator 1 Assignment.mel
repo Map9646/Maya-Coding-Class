@@ -254,4 +254,4 @@ global proc float Calculator(string $operations, float $numbers[])
     
 }
 
-Calculator("Mode",{1,10,-45,1,1,21,2});
+Calculator("+",{1,10,-45,1,1,21,2});
