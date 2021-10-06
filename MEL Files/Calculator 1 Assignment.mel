@@ -1,58 +1,59 @@
-global proc float Calculator(float $numbers[], string $operations[])
+global proc float Calculator(float $numbers[])
 {
     float $result;
+    string operations[];
     
-    
-    if($operations = +)
-   {
-     Add($numbers);  
-   } 
-   
-   
-   if($operations = -)
-   {
-      Subtract($numbers); 
-   } 
-   
-   
-   
-   if($operations = *)
-   {
-     
-     Multiply($numbers);
+    for($i=0; $i<size($numbers); $i++)
+    {
+      
+       if($operations = "0")
+       {
+         Add($numbers);
+         print(  
+       } 
        
-   }
+       if($operations = "1")
+       {
+          Subtract($numbers); 
+       } 
+       
+       if($operations = "2")
+       {
+         
+         Multiply($numbers);
+           
+       }
+       
+       if($operations = "3")
+       {
+         Divide($numbers);  
+       }
+       
+       if($operations = "4")
+       {
+         Powers($numbers); 
+       }
+       
+       if($operations = "5")
+       {
+         Mean($numbers);  
+       }
+       
+       if($operations = "6")
+       {
+          Median($numbers); 
+       }
+       
+       if($operations = "7")
+       {
+         Mode($numbers);  
+       } 
+          
+            
+    }
+    
+    return $result; 
    
-   
-   if($operations = /)
-   {
-     Divide($numbers);  
-   }
-   
-   
-   
-   if($operations = ^)
-   {
-     Powers($numbers); 
-   }
-   
-   
-   if($operations = "Mean")
-   {
-     Mean($numbers);  
-   }
-   
-   
-   if($operations = "Median")
-   {
-      Median($numbers); 
-   }
-   
-   
-   if($operations = "Mode")
-   {
-     Mode($numbers);  
-   }
     
 }
 
@@ -115,28 +116,6 @@ global proc float Multiply(float $numbers[])
 }
  
  
-
-
-
-
-
-
-global proc float Multiply(float $numbers[])
-{
-  float $product = 1; 
-  
-  for($i=0; $i<size($numbers); $i++)
-  {
-      $product *= $numbers[$i];
-      
-  }
-     
-  return $product;  
-}
-
-Multiply({2,5});
-
-
 global proc float Divide(float $numbers[])
 {
   float $quotant = $numbers[0]; 
@@ -281,149 +260,3 @@ global proc float Mode(float $numbers[])
 }
 Mode({1,10,10,-10,5,6,1,1,9,9,9,9}); 
 
-Multiply({2,5});
-
-
-global proc float Divide(float $numbers[])
-{
-  float $quotant = $numbers[0]; 
-  
-  for($i=1; $i<size($numbers); $i++)
-  {
-      $quotant /= $numbers[$i];
-      
-  }
-     
-  return $quotant;  
-}
-
-Divide({10,5});
-
-
-
-global proc float Powers(float $numbers[])
-{                                                            
-  float $power = $numbers[1]; 
-  
-  for($i=1; $i<size($numbers); $i++)
-  {
-     $power = `pow $numbers[0] $numbers[1]`;
-      
-  }
-    
-    return `pow $numbers[0] $numbers[1]`;
-
-}
-
-Powers({3,2});
-
-
-global proc float Mean(float $numbers[])
-{
-  float $average = $numbers[0]; 
-  
-  for($i=1; $i<size($numbers); $i++)
-  {
-      $average += $numbers[$i];
-      
-  }
-    
- 
-      $average /= $i;                       
-     
- 
- return $average;
-}
-
-Mean({10,5,3,4}); 
-
-
-global proc float Median(float $numbers[])
-{
-    float $middle = 0;
-    int $highindex;
-    int $lowindex;
-    int $index; 
-    
-    $numbers = sort ($numbers);
-  
-    int $size = size($numbers); 
-    
-    if($size % 2 == 0)
-    {
-      int $highindex = ($size/2);
-      int $lowindex = ($highindex -1);
-      $middle = $numbers[$highindex + $lowindex] /2;  
-    }
-        
-    
-    else
-    {
-     int $index = ($size - 1) /2;
-     $middle = $numbers[$index];
-    }
-    
-    return $middle; 
-}
-
-Median({1,10,4,-12,2}); 
-   
-    
-
-     
-
-global proc float Mode(float $numbers[])
-{
-    float $mode;
-    int $index;
-    float $value[];
-    int $frequency[];
-   
-    
-    
-    for($i=0; $i<size($numbers); $i++)
-    {
-        
-       if(floatArrayContains($numbers[$i], $value) == 0)
-       {
-         $value[size($value)] = $numbers[$i];
-         $frequency[size($frequency)] = 1;  
-       }
-       
-       else
-       {
-         int $index = floatArrayFind($numbers[$i],0, $value);
-         
-         $frequency[$index] = $frequency[$index] + 1; 
-         
-        }
-         
-        
-     }
-     
-     print("numbers:\n");
-     print(floatArrayToString($numbers, ", "));
-     print("\nvalue:\n");
-     print(floatArrayToString($value, ", "));
-     print("\nfrequency:\n");
-     print(intArrayToString($frequency, ", "));
-      
-       int $maxvalue = 0;
-       int $modeIndex; 
-       for($i=0; $i<size($frequency); $i++) 
-       {
-          if($frequency[$i] > $maxvalue)
-         {
-            $maxvalue = $frequency[$i];
-         }  
-          
-        
-       }
-       $modeIndex = intArrayFind($maxvalue,0,$frequency);
-     
-       $mode = $value[$modeIndex]; 
-    
-             
-    return $mode;  
-}
-Mode({1,10,10,-10,5,6,1,1,9,9,9,9}); 
