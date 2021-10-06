@@ -1,13 +1,61 @@
 global proc float Calculator(float $numbers[], string $operations[])
 {
-   float $result;
-   
-   for($i=0; $i<size($numbers); $i++)
+    float $result;
+    
+    
+    if($operations = +)
    {
-     if(  
+     Add($numbers);  
+   } 
+   
+   
+   if($operations = -)
+   {
+      Subtract($numbers); 
+   } 
+   
+   
+   
+   if($operations = *)
+   {
+     
+     Multiply($numbers);
+       
    }
-  
+   
+   
+   if($operations = /)
+   {
+     Divide($numbers);  
+   }
+   
+   
+   
+   if($operations = ^)
+   {
+     Powers($numbers); 
+   }
+   
+   
+   if($operations = "Mean")
+   {
+     Mean($numbers);  
+   }
+   
+   
+   if($operations = "Median")
+   {
+      Median($numbers); 
+   }
+   
+   
+   if($operations = "Mode")
+   {
+     Mode($numbers);  
+   }
+    
 }
+
   
 
 
