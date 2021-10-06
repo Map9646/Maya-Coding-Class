@@ -197,61 +197,61 @@ Mode({1,10,10,-10,5,6,1,1,9,9,9,9});
 
 
 
-global proc float Calculator(float $numbers[])
+global proc float Calculator(string $operations, float $numbers[])
 {
-    float $result;
-    string operations[];
-    
+
     for($i=0; $i<size($numbers); $i++)
     {
-      float $result = 0; 
-       if($operations = "0")
+     
+       if($operations == "+")
        {
-         Add($numbers);
-          
+         return Add($numbers);
+         
        } 
        
-       if($operations = "1")
+       if($operations == "-")
        {
-          Subtract($numbers); 
+          return Subtract($numbers); 
        } 
        
-       if($operations = "2")
+       if($operations == "*")
        {
          
-         Multiply($numbers);
+         return Multiply($numbers);
            
        }
        
-       if($operations = "3")
+       if($operations == "/")
        {
-         Divide($numbers);  
+         return Divide($numbers);  
        }
        
-       if($operations = "4")
+       if($operations == "^")
        {
-         Powers($numbers); 
+         return Powers($numbers); 
        }
        
-       if($operations = "5")
+       if($operations == "Mean")
        {
-         Mean($numbers);  
+         return Mean($numbers);  
        }
        
-       if($operations = "6")
+       if($operations == "Median")
        {
-          Median($numbers); 
+          return Median($numbers); 
        }
        
-       if($operations = "7")
+       if($operations == "Mode")
        {
-         Mode($numbers);  
+         return Mode($numbers);  
        } 
           
             
     }
     
-    return $result; 
+  
    
     
 }
+
+Calculator("Mode",{1,10,-45,1,1,21,2});
