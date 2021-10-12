@@ -1,21 +1,21 @@
 select -visible; //I think this shoudl work, but I'll test it once I get everything else working.
 
-global proc Randomize (int $amount, $minX, $maxX, $minY, $maxY, $minZ, $maxZ)
+global proc Randomize (float $amount, float $minX, float $maxX, float $minY, float $maxY, float $minZ, float $maxZ)
 {
-   string $objects[] = ls - sl;//remember, ls - sl returns the names of the objects that are currently selected in the scene and this bit of code adds them to the Array.
+   string $objects[] = `ls - sl`;//remember, ls - sl returns the names of the objects that are currently selected in the scene and this bit of code adds them to the Array.
    
    for($i=0; $i<size($objects); $i++)
    {
       for($j=0; $j<$amount; $j++)
       {
-        string $duplicate = duplicate $objects[$i]; 
-        //I think I wrote these right, but not 100% sure. Will check back later today. 
-        float $X = rand $minX, $maxX;
-        float $Y = rand $minY, $maxY;
-        float $Z = rand $minZ, $maxZ; 
+        duplicate $objects[$i]; 
+        //It's correct. I was just having a syntax error. I fixed it. 
+        float $x = rand ($minX, $maxX);
+        float $y = rand ($minY, $maxY);
+        float $z = rand ($minZ, $maxZ); 
         
         //I know I need to duplicate the objects, but my brain is not processing how to write that right now. Much too early...-_- Code not good at 4 a.m
-        $duplicate = 
+        duplicate($x, $y, $z);
         
          
       }
@@ -25,7 +25,7 @@ global proc Randomize (int $amount, $minX, $maxX, $minY, $maxY, $minZ, $maxZ)
    } 
    
    
-   
+   Randomize(10,1.2,-12.5);
    
    
    
