@@ -15,7 +15,7 @@ global proc Randomize (float $amount, float $minX, float $maxX, float $minY, flo
         float $z = rand ($minZ, $maxZ); 
         
        
-        duplicate ($x, $y, $z);
+        move($x, $y, $z);
         
       }
        
@@ -26,4 +26,4 @@ global proc Randomize (float $amount, float $minX, float $maxX, float $minY, flo
    
 } 
 
-Randomize(10,0,10,0,10,0,100); //Now it's just not working at all. No duplicates and won't select anything. Ask for help tomorrow. 
+Randomize(1,10,1,10,1,10,2); 
