@@ -1,37 +1,28 @@
 import maya.cmds as cmds
 
-def renaming (name):
+def renaming (objName, number, objNode):
 
-   cmds.ls(sl=True)
+   objS = cmds.ls(sl=True)
    
-   name = "arm_##_geo"
-
-   for i in name:
-
-        "arm_name_geo".count("name")
-
-        "arm_name_geo".partition("name")
-
-        "arm_name_name_geo".partition("name")
-
-        "arm_name_geo" + name(i).zfill(2) + "arm_name_name_geo"
-        
-
-renaming(name)
+   for i, objS in enumerate:
+    "arm" + "geo".partition(objName)
+    
+    cmds.rename(objName + str(i).zfill + objNode)
+      
 
 
+renaming("arm", 2, "geo")
+
+#not sure why it won't let me call my function. Something with my string. It could be my partition. It's just not running
 
 
+#Moving it into the for loop seemed to resolve issues, but I'm not sure if that means it's working properly yet. 
 
 
+#for i, sel in enumerate()
 
 
-
-
-
-
-
-
+#I'll ask for help tonight. It's probs just a simple fix. 
 
 
 
