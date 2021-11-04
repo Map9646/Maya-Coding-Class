@@ -6,12 +6,12 @@ def renaming (objName, number, objNode):
    
    for i, sel in enumerate(objS):
     
-    "arm" , "geo".partition(objName)
-    
-    cmds.rename(objName + str(i).zfill + objNode)
+       cmds.rename(objName + str(i).zfill + objNode)
 
 
 renaming("arm", 2, "geo")
+
+#It's working...let me see if it does what I want it to. Just kidding. It lied to me. >.<
 
 #not sure why it won't let me call my function. Something with my string. It could be my partition. It's just not running
 
@@ -28,8 +28,10 @@ renaming("arm", 2, "geo")
       
 #nevermind number = i
 
+#zfill is the number of characters that need to be filled in
 
 
+#"arm" , "geo".partition(objName)
 
 
 
