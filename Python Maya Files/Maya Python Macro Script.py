@@ -22,3 +22,6 @@ cmds.move(0, 0, 0.4, relative=True)
 cmds.duplicate(smartTransform=True)
 cmds.move(0, 0, -0.6, relative=True)
 cmds.move(0, -0.2, 0, relative=True)
+
+#cmds.rename ("pSphere1", "arm_##_geo")
+ #"arm_##_geo".count("#") 
