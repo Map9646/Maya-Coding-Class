@@ -4,9 +4,8 @@ def renaming (objName, number, objNode):
 
    objS = cmds.ls(sl=True)
    
-   numbers = i
-   
    for i, sel in enumerate(objS):
+    
     "arm" , "geo".partition(objName)
     
     cmds.rename(objName + str(i).zfill + objNode)
@@ -27,7 +26,7 @@ renaming("arm", 2, "geo")
 
 #Would I put numbers in place of i? Not sure, but possibly. I'll test it. 
       
-
+#nevermind number = i
 
 
 
