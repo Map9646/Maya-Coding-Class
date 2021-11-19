@@ -2,7 +2,7 @@ import maya.cmds as cmds
 
 cmds.select (all = True)
 
-def Control()
+def Control(objName)
     
     sels = cmds.ls(sl = True)
 
@@ -22,9 +22,9 @@ def Control()
         
         
         
-            #if ("_" = True):
+            if objName:
                 
-                #cmds.rename(objName + 'Ctrl')
+                cmds.rename(objName + 'Ctrl')
             
             
         
@@ -34,6 +34,7 @@ def Control()
 def ControlColor(newColor):
     
   cmds.setAttr('ctrl' + 'overrideEnabled', newColor)
+  cmds.setAttr('ctrl' + 'overrideColor', newColor)
 
    
     
