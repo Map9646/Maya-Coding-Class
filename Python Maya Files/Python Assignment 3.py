@@ -7,7 +7,7 @@ def Control(objName)
     sels = cmds.ls(sl = True)
 
     if sels:
-        for sel in sels: #Take this into PyCharmm on my Desktop and see what isn't working and why. 
+        for sel in sels: 
         
        
         
@@ -22,9 +22,9 @@ def Control(objName)
         
         
         
-            if objName:
+            #if objName:
                 
-                cmds.rename(objName + 'Ctrl')
+                #cmds.rename(objName + 'ctrl')
             
             
         
@@ -33,10 +33,10 @@ def Control(objName)
        
 def ControlColor(newColor):
     
-  cmds.setAttr('ctrl' + 'overrideEnabled', newColor)
-  cmds.setAttr('ctrl' + 'overrideColor', newColor)
+  cmds.setAttr('ctrlShape' + '.overrideEnabled', 1)
+  cmds.setAttr('ctrlShape' + '.overrideColor', newColor)
 
    
     
     
-ControlColor(5)       
+ControlColor(10)       
