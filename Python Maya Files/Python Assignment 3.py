@@ -2,30 +2,25 @@ import maya.cmds as cmds
 
 cmds.select (all = True)
 
-def Control(objName)
+def Control(sels, sels2, sels3):
     
     sels = cmds.ls(sl = True)
 
     if sels:
         for sel in sels: 
         
-       
+            cmds.circle (name = 'ctrl')
         
-            cmds.circle (n = 'ctrl')
+            cmds.group  (name = 'ctrlGroup')
         
-            cmds.group ('ctrl', n = 'ctrlGroup')
-        
-            cmds.parent ('ctrl', 'ctrlGroup')
-        
-            cmds.matchTransform ('ctrlGroup', sels)
-        
-        
-        
-        
-            #if objName:
-                
-                #cmds.rename(objName + 'ctrl')
             
+            cmds.matchTransform ('ctrlGroup', sels)
+            cmds.matchTransform ('ctrlGroup', sels2)
+            cmds.matchTransform ('ctrlGroup', sels3)
+        
+        
+        
+Control('pSphere1', 'pSphere2', 'pSphere3')         
             
         
         
