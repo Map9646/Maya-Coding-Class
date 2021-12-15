@@ -26,12 +26,8 @@ Control('pSphere1', 'pSphere2', 'pSphere3')
         
        
        
-def ControlColor(newColor):
-    
-  cmds.setAttr('ctrlShape' + '.overrideEnabled', 1)
-  cmds.setAttr('ctrlShape' + '.overrideColor', newColor)
+
 
    
     
     
-ControlColor(10)       
